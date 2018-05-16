@@ -115,7 +115,7 @@ describe Travis::Addons::Irc::Client do
         it 'before receiving a numeric' do
           expect_standard_sequence
           client = subject.new(server, nick)
-          client.numeric_received.should_not be_true
+          client.numeric_received.should_not be true
         end
       end
 
@@ -124,7 +124,7 @@ describe Travis::Addons::Irc::Client do
           expect_numeric_sequence
           client = subject.new(server, nick)
           sleep 0.5
-          client.numeric_received.should be_true
+          client.numeric_received.should be true
         end
       end
     end
