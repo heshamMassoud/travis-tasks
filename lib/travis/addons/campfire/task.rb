@@ -20,7 +20,7 @@ module Travis
         end
 
         def message
-          @message ||= template.map { |line| Util::Template.new(line, payload).interpolate }
+          @message ||= template.map { |line| Util::Template.new(line, payload, source: 'campfire').interpolate }
         end
 
         private

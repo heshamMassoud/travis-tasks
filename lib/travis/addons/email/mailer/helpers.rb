@@ -12,7 +12,7 @@ module Travis
 
           def asset_url(build_state)
             if(build_state == 'canceled')
-              "#{Travis.config.s3.url}/status-errored.png" 
+              "#{Travis.config.s3.url}/status-errored.png"
             else
             "#{Travis.config.s3.url}/status-#{build_state}.png"
             end
@@ -99,7 +99,7 @@ module Travis
           def repository_build_url(options)
             config = Travis.config
             url = [config.http_host, options[:slug], 'builds', options[:id]].join('/')
-            config.utm ? with_utm(url) :url
+            Travis.config.utm ? with_utm(url) :url
           end
 
           def title(repository)
